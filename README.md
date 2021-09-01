@@ -1,0 +1,2 @@
+# JavaRepo
+ java codes
