@@ -4,8 +4,8 @@ public class HistogramCompositionDemo {
 
         WordHistogram wordHistogram = new WordHistogram();
 
-       wordHistogram.createWordHistogram();
-       wordHistogram.print();
+        wordHistogram.createWordHistogram();
+        wordHistogram.print();
 
     }
 
