@@ -13,5 +13,8 @@ files:
     \    public int returnInt();\n}"
   learner_created: false
 feedback_link: https://hyperskill.org/learn/step/2553#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Wed, 27 Oct 2021 22:37:11 UTC
 record: -1

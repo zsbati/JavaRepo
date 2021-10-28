@@ -10,10 +10,17 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Topics/Anonymous classes/An anonymous class with three methods" />
             <option value="$PROJECT_DIR$/Topics/Anonymous classes/Capture variables" />
+            <option value="$PROJECT_DIR$/Topics/Anonymous classes/Implement Runnable" />
+            <option value="$PROJECT_DIR$/Topics/Anonymous classes/Single method" />
+            <option value="$PROJECT_DIR$/Topics/Anonymous classes/String reverser" />
             <option value="$PROJECT_DIR$/Topics/Anonymous classes/Theory" />
             <option value="$PROJECT_DIR$/Topics/Array/Initializing an array of integers" />
             <option value="$PROJECT_DIR$/Topics/Array/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Comparable/Implement compareTo method" />
+            <option value="$PROJECT_DIR$/Topics/Comparable/Implement comparing by additional fields" />
+            <option value="$PROJECT_DIR$/Topics/Comparable/Theory" />
             <option value="$PROJECT_DIR$/Topics/Constructor/Book" />
             <option value="$PROJECT_DIR$/Topics/Constructor/Theory" />
             <option value="$PROJECT_DIR$/Topics/Default methods/Add new default method" />
@@ -30,8 +37,15 @@
             <option value="$PROJECT_DIR$/Topics/Errors in programs/Print the age" />
             <option value="$PROJECT_DIR$/Topics/Errors in programs/Theory" />
             <option value="$PROJECT_DIR$/Topics/Errors in programs/What's wrong" />
+            <option value="$PROJECT_DIR$/Topics/Getters and setters/Account" />
+            <option value="$PROJECT_DIR$/Topics/Getters and setters/Book" />
+            <option value="$PROJECT_DIR$/Topics/Getters and setters/Complex" />
+            <option value="$PROJECT_DIR$/Topics/Getters and setters/Getting the fullname" />
+            <option value="$PROJECT_DIR$/Topics/Getters and setters/Theory" />
             <option value="$PROJECT_DIR$/Topics/Increment and decrement/Decrement all" />
             <option value="$PROJECT_DIR$/Topics/Increment and decrement/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Inheritance/Classes for Hospital" />
+            <option value="$PROJECT_DIR$/Topics/Inheritance/Theory" />
             <option value="$PROJECT_DIR$/Topics/Instance methods/Circle" />
             <option value="$PROJECT_DIR$/Topics/Instance methods/Counter" />
             <option value="$PROJECT_DIR$/Topics/Instance methods/Patient needs a doctor" />
@@ -48,6 +62,9 @@
             <option value="$PROJECT_DIR$/Topics/Objects/Change identities" />
             <option value="$PROJECT_DIR$/Topics/Objects/Preparing full name" />
             <option value="$PROJECT_DIR$/Topics/Objects/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Package/Binary search" />
+            <option value="$PROJECT_DIR$/Topics/Package/Getting input" />
+            <option value="$PROJECT_DIR$/Topics/Package/Theory" />
             <option value="$PROJECT_DIR$/Topics/Relational operators/Exactly one parameter is positive" />
             <option value="$PROJECT_DIR$/Topics/Relational operators/Groundhogs at a party" />
             <option value="$PROJECT_DIR$/Topics/Relational operators/Is between" />

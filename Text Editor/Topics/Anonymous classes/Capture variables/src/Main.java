@@ -8,10 +8,17 @@ public class Main {
         final String str = scanner.nextLine();
         final int number = Integer.parseInt(scanner.nextLine());
 
-        Returner returner = new Ret() {
+        Returner returner = new Returner() {
+            @Override
+            public String returnString() {
+                return str;
+            }
 
-        }
-                /* create an instance of an anonymous class here,
+            @Override
+            public int returnInt() {
+                return number;
+            }
+        }; /* create an instance of an anonymous class here,
                                do not forget ; on the end;
                                variables str and number will be accessible during testing */
 
@@ -19,17 +26,7 @@ public class Main {
         System.out.println(returner.returnInt());
     }
 
-    private static class Ret implements Returner {
-        @Override
-        public String returnString() {
-            return null;
-        }
 
-        @Override
-        public int returnInt() {
-            return 0;
-        }
-    }
 }
 
 interface Returner {
