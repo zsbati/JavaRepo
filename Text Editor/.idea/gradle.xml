@@ -37,11 +37,16 @@
             <option value="$PROJECT_DIR$/Topics/Errors in programs/Print the age" />
             <option value="$PROJECT_DIR$/Topics/Errors in programs/Theory" />
             <option value="$PROJECT_DIR$/Topics/Errors in programs/What's wrong" />
+            <option value="$PROJECT_DIR$/Topics/Exception handling/Catching some exceptions" />
+            <option value="$PROJECT_DIR$/Topics/Exception handling/String to double conversion" />
+            <option value="$PROJECT_DIR$/Topics/Exception handling/Theory" />
             <option value="$PROJECT_DIR$/Topics/Getters and setters/Account" />
             <option value="$PROJECT_DIR$/Topics/Getters and setters/Book" />
             <option value="$PROJECT_DIR$/Topics/Getters and setters/Complex" />
             <option value="$PROJECT_DIR$/Topics/Getters and setters/Getting the fullname" />
             <option value="$PROJECT_DIR$/Topics/Getters and setters/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Hierarchy of exceptions/Base class" />
+            <option value="$PROJECT_DIR$/Topics/Hierarchy of exceptions/Theory" />
             <option value="$PROJECT_DIR$/Topics/Increment and decrement/Decrement all" />
             <option value="$PROJECT_DIR$/Topics/Increment and decrement/Theory" />
             <option value="$PROJECT_DIR$/Topics/Inheritance/Classes for Hospital" />
@@ -84,6 +89,8 @@
             <option value="$PROJECT_DIR$/Topics/Switch statement/Theory" />
             <option value="$PROJECT_DIR$/Topics/The main method/Print  We are robots_" />
             <option value="$PROJECT_DIR$/Topics/The main method/Theory" />
+            <option value="$PROJECT_DIR$/Topics/What is an exception/Avoid division by zero" />
+            <option value="$PROJECT_DIR$/Topics/What is an exception/Theory" />
             <option value="$PROJECT_DIR$/util" />
           </set>
         </option>
