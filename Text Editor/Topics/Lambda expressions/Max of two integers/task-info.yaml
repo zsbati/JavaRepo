@@ -1,0 +1,25 @@
+type: code
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    import java.util.function.IntBinaryOperator;
+
+    class Operator {
+
+        public static IntBinaryOperator binaryOperator = // Write your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/2363#comment
+status: Failed
+feedback:
+  message: |
+    Compilation error
+    Main.java:27: error: cannot find symbol
+            return Operator.binaryOperator.applyAsInt(val___1, val___2);
+                           ^
+      symbol:   variable binaryOperator
+      location: class Operator
+    1 error
+  time: Fri, 29 Oct 2021 17:35:04 UTC
+record: -1
