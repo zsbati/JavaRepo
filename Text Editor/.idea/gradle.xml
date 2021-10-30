@@ -43,7 +43,10 @@
             <option value="$PROJECT_DIR$/Topics/Exception handling/Catching some exceptions" />
             <option value="$PROJECT_DIR$/Topics/Exception handling/String to double conversion" />
             <option value="$PROJECT_DIR$/Topics/Exception handling/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Files/Are siblings" />
+            <option value="$PROJECT_DIR$/Topics/Files/Theory" />
             <option value="$PROJECT_DIR$/Topics/Functional interfaces/A lambda expression with seven arguments" />
+            <option value="$PROJECT_DIR$/Topics/Functional interfaces/Ternary predicate" />
             <option value="$PROJECT_DIR$/Topics/Functional interfaces/Theory" />
             <option value="$PROJECT_DIR$/Topics/Getters and setters/Account" />
             <option value="$PROJECT_DIR$/Topics/Getters and setters/Book" />
