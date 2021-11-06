@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class GapfulNumbers {
 
     public static boolean even(long n) {
-        return (n % 2 == 0) ;
+        return (n % 2 == 0);
     }
 
     public static boolean divisible7(long n) {
