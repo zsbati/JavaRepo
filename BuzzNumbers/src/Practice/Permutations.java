@@ -1,4 +1,4 @@
-// to check if an array is a permutation
+package Practice;// to check if an array is a permutation
 
 import java.util.*;
 

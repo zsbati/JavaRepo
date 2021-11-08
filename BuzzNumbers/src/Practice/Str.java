@@ -1,3 +1,5 @@
+package Practice;
+
 public class Str {
 
     public static StringBuilder createEnglishAlphabet() {
