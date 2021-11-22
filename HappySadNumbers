@@ -1,0 +1,380 @@
+import java.util.*;
+
+public class Main {
+
+    public static boolean even(long n) {
+        return (n % 2 == 0);
+    }
+
+    public static boolean divisible7(long n) {
+        return n % 7 == 0;
+    }
+
+    public static boolean ends7(long n) {
+        String s = Long.toString(n);
+        return s.charAt(s.length() - 1) == '7';
+    }
+
+    public static boolean buzz(long n) {
+        return ends7(n) || divisible7(n);
+    }
+
+    public static boolean duck(long n) {
+        String s = String.valueOf(n);
+        return s.indexOf('0') != -1;
+
+    }
+
+    public static boolean palindromic(long n) {
+        String str = String.valueOf(n);
+        StringBuilder reverse = new StringBuilder();
+        for (int i = 0; i < str.length(); i++) {
+            reverse.insert(0, str.charAt(i));
+        }
+        return str.equals(reverse.toString());
+    }
+
+    public static boolean gapful(long n) {
+        String str = String.valueOf(n);
+        if (str.length() < 3) {
+            return false;
+        }
+        String div = str.charAt(0) + String.valueOf(str.charAt(str.length() - 1));
+        long divisor = Long.parseLong(div);
+        return n % divisor == 0;
+    }
+
+    public static boolean spy(long n) {
+        String str = String.valueOf(n);
+        long sum = 0;
+        long product = 1;
+        for (int i = 0; i < str.length(); i++) {
+            sum += Character.getNumericValue(str.charAt(i));
+            product *= Character.getNumericValue(str.charAt(i));
+        }
+        return sum == product;
+    }
+
+    public static boolean square(long n) {
+        double roundOffRoot = Math.floor(Math.sqrt(n));
+        double root = Math.sqrt(n);
+        return root == roundOffRoot;
+    }
+
+    public static boolean sunny(long n) {
+        double roundOffRoot = Math.floor(Math.sqrt(n + 1));
+        double root = Math.sqrt(n + 1);
+        return root == roundOffRoot;
+    }
+
+    public static boolean jumping(long n) {
+      String str = String.valueOf(n);
+      if (str.length() == 1) {
+        return true;
+      }
+      int n1;
+      int n2;
+      for (int i = 0; i < str.length() - 1; i++) {
+        n1 = (int) str.charAt(i);
+        n2 = (int) str.charAt(i + 1);
+        if (Math.abs(n1 - n2) != 1) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    public static boolean happy(long n) {
+        if (n == 1 || n == 7)
+            return true;
+        long sum = n, x = n;
+ 
+        // this loop executes till the sum of square of
+        // digits obtained is not a single digit number
+        while(sum > 9) {
+            sum = numSquareSum(x);
+            if (sum == 1)
+                return true;
+            x = sum;
+        }
+        if(sum == 7) {
+          return true;
+        }
+        return false;
+    }
+
+  public static long numSquareSum(long n) {
+    int squareSum = 0;
+    while (n!= 0)
+    {
+        squareSum += (n % 10) * (n % 10);
+        n /= 10;
+    }
+    return squareSum;
+}
+
+    public static void examine(long n) {
+        System.out.println();
+        System.out.printf("Properties of %d\n", n);
+        System.out.println("even: " + even(n));
+        System.out.println("odd: " + !even(n));
+        System.out.println("buzz: " + buzz(n));
+        System.out.println("duck: " + duck(n));
+        System.out.println("palindromic: " + palindromic(n));
+        System.out.println("gapful: " + gapful(n));
+        System.out.println("spy: " + spy(n));
+        System.out.println("square: " + square(n));
+        System.out.println("sunny: " + sunny(n));
+        System.out.println("jumping: " + jumping(n));
+        System.out.println("happy: " + happy(n));
+        System.out.println("sad: " + !happy(n));
+        System.out.println();
+    }
+
+    public static long property(String s, long n) {
+        switch (s) {
+            case "EVEN" :
+              return even(n) ? n : 0;
+            case "ODD" :
+              return  !even(n) ? n : 0;
+            case "BUZZ" :
+              return buzz(n) ? n : 0;
+            case "DUCK" :
+              return duck(n) ? n : 0;
+            case "PALINDROMIC" :
+              return palindromic(n) ? n : 0;
+            case "GAPFUL" :
+              return gapful(n) ? n : 0;
+            case "SPY" :
+              return spy(n) ? n : 0;
+            case "SQUARE":
+              return square(n) ? n : 0;
+            case "SUNNY" :
+              return sunny(n) ? n : 0;
+            case "JUMPING" :
+              return jumping(n) ? n : 0;
+            case "HAPPY" :
+              return happy(n) ? n : 0;
+            case "SAD" :
+              return !happy(n) ? n : 0;
+            
+            default :
+              return 0;
+        }
+    }
+
+    public static void numberInOneLine(long n) {
+        StringBuilder printout = new StringBuilder(n + " is ");
+        if (even(n)) {
+            printout.append("even");
+        } else {
+            printout.append("odd");
+        }
+
+        if (buzz(n)) {
+            printout.append(", buzz");
+        }
+        if (duck(n)) {
+            printout.append(", duck");
+        }
+        if (palindromic(n)) {
+            printout.append(", palindromic");
+        }
+        if (gapful(n)) {
+            printout.append(", gapful");
+        }
+        if (spy(n)) {
+            printout.append(", spy");
+        }
+        if (square(n)) {
+            printout.append(", square");
+        }
+        if (sunny(n)) {
+            printout.append(", sunny");
+        }
+        if (jumping(n)) {
+            printout.append(", jumping");
+        }
+        if (happy(n)) {
+            printout.append(", happy");
+        }
+        if (!happy(n)) {
+            printout.append(", sad");
+        }
+        System.out.println(printout);
+    }
+
+    public static void instructions() {
+        System.out.println();
+        System.out.println("Supported requests:");
+        System.out.println("- enter a natural number to know its properties;");
+        System.out.println("- enter two natural numbers to obtain the properties of the list:");
+        System.out.println("  * the first parameter represents a starting number;");
+        System.out.println("  * the second parameter shows how many consecutive numbers are to be printed;");
+        System.out.println("- two natural numbers and properties to search for;");
+        System.out.println("- separate the parameters with one space;");
+        System.out.println("- enter 0 to exit.");
+    }
+
+    public static void printRange(long start, long range) {
+        System.out.println();
+        for (long i = start; i < start + range; i++) {
+            numberInOneLine(i);
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        LinkedList<String> properties = new LinkedList<>();
+        properties.add("BUZZ");
+        properties.add("DUCK");
+        properties.add("GAPFUL");
+        properties.add("PALINDROMIC");
+        properties.add("SPY");
+        properties.add("EVEN");
+        properties.add("ODD");
+        properties.add("SQUARE");
+        properties.add("SUNNY");
+        properties.add("JUMPING");
+        properties.add("HAPPY");
+        properties.add("SAD");
+
+        String notInProperties = "Available properties: " + properties.toString();
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Welcome to Amazing Numbers!");
+        instructions();
+
+        long number;
+        while (true) {
+            System.out.println();
+            System.out.print("Enter a request:");
+            String request = sc.nextLine();
+            if (request.equals("")) {
+                instructions();
+                continue;
+            }
+            String[] input = request.split(" ");
+            if (input.length == 1) {
+                try {
+                    number = Long.parseLong(input[0]);
+                } catch (NumberFormatException e) {
+                    System.out.println("The first parameter should be a natural number or zero.");
+                    continue;
+                }
+
+                if (number == 0) {
+                    System.out.println(" ");
+                    System.out.println("Goodbye!");
+                    break;
+                }
+
+                if (number < 0) {
+                    System.out.println("The first parameter should be a natural number or zero.");
+                    continue;
+                }
+
+                examine(number);
+            }
+
+            if (input.length >= 2) {
+                long start;
+                try {
+                    start = Long.parseLong(input[0]);
+                    if (start < 0) {
+                        System.out.println("The first parameter should be a natural number or zero.");
+                        continue;
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("The first parameter should be a natural number or zero.");
+                    continue;
+                }
+                long range;
+                try {
+                    range = Long.parseLong(input[1]);
+                    if (range < 0) {
+                        System.out.println("The second parameter should be a natural number");
+                        continue;
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("The second parameter should be a natural number");
+                    continue;
+                }
+                if (input.length == 2) {
+                    printRange(start, range);
+                }
+                if (input.length >= 3) {
+                  LinkedList<String> ops = new LinkedList<String>();
+                  LinkedList<String> mistakes = new LinkedList<String>();
+                  for (int i = 2; i < input.length; i++) {
+                    ops.add(input[i].toUpperCase());
+                    if (!properties.contains(input[i].toUpperCase())) {
+                      mistakes.add(input[i].toUpperCase());
+                    }
+                  }
+                  
+                    if (mistakes.size() != 0) {
+                        if (mistakes.size() > 1){
+                            System.out.printf("The properties %s are wrong.\n", mistakes.toString());
+                        } else {
+                            System.out.printf("The property %s is wrong.\n", mistakes.toString());
+                        }
+                        System.out.println(notInProperties);
+                    } else {
+                      if (ops.contains("EVEN") && ops.contains("ODD")) {
+                        System.out.println("The request contains mutually exclusive properties: [ODD, EVEN]");
+                        System.out.println("There are no numbers with these properties.");
+                        continue;
+                  }
+                  if (ops.contains("-EVEN") && ops.contains("-ODD")) {
+                        System.out.println("The request contains mutually exclusive properties: [-ODD, -EVEN]");
+                        System.out.println("There are no numbers with these properties.");
+                        continue;
+                  }
+                  if (ops.contains("DUCK") && ops.contains("SPY")) {
+                        System.out.println("The request contains mutually exclusive properties: [DUCK, SPY]");
+                        System.out.println("There are no numbers with these properties.");
+                        continue;
+                  }
+                  if (ops.contains("SUNNY") && ops.contains("SQUARE")) {
+                        System.out.println("The request contains mutually exclusive properties: [SUNNY, SQUARE]");
+                        System.out.println("There are no numbers with these properties.");
+                        continue;
+                  }
+                  if (ops.contains("HAPPY") && ops.contains("SAD")) {
+                        System.out.println("The request contains mutually exclusive properties: [HAPPY, SAD]");
+                        System.out.println("There are no numbers with these properties.");
+                        continue;
+                  }
+                  if (ops.contains("-HAPPY") && ops.contains("-SAD")) {
+                        System.out.println("The request contains mutually exclusive properties: [-HAPPY, -SAD]");
+                        System.out.println("There are no numbers with these properties.");
+                        continue;
+                  }
+                        long count = range;
+                        long n = start;
+                        while (count > 0) {
+                            int product = 1;
+                            for (int i = 0; i < ops.size(); i++) {
+                              if (property(ops.get(i), n) == 0) {
+                                product = 0;
+                              }
+                            }
+
+                            if (product != 0) {
+                                count--;
+                                numberInOneLine(n);
+                            }
+                            n++;
+                        }
+                    }
+                }
+
+                
+                    
+                    
+                }
+            }
+        }
+    }
+
