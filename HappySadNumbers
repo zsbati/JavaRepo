@@ -321,6 +321,28 @@ public class Main {
                         }
                         System.out.println(notInProperties);
                     } else {
+                    // to filter out an operation and its contrary:
+                      for (String s : ops) {
+                        if (s.startsWith("-")) {
+                          if (ops.contains(s.substring(1))) {
+                            mistakes.add(s);
+                            mistakes.add(s.substring(1));
+                            break;
+                          } 
+                        } else {
+                          if (ops.contains("-" + s)) {
+                            mistakes.add("-" + s);
+                            mistakes.add(s);
+                            break;
+                          } 
+                        }
+                      }
+                      if (mistakes.size() != 0) {
+                        System.out.printf("The request contains mutually exclusive properties: %s\n", mistakes.toString());
+                        System.out.println("There are no numbers with these properties.");
+                        continue;
+                      }
+                      //////////////////////
                       if (ops.contains("EVEN") && ops.contains("ODD")) {
                         System.out.println("The request contains mutually exclusive properties: [ODD, EVEN]");
                         System.out.println("There are no numbers with these properties.");
