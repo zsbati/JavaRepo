@@ -1,0 +1,194 @@
+package bullscows;
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class Main {
+
+    public static String characterGenerator(int symbols, Random random) {
+        int index = random.nextInt(symbols);
+
+        return symbolGenerator(index);
+    }
+
+    public static String symbolGenerator(int n) {
+        String character;
+        if (n <= 9) {
+            return String.valueOf(n);
+        } else {
+            switch (n) {
+                case 10:
+                    character = "a";
+                    break;
+                case 11:
+                    character = "b";
+                    break;
+                case 12:
+                    character = "c";
+                    break;
+                case 13:
+                    character = "d";
+                    break;
+                case 14:
+                    character = "e";
+                    break;
+                case 15:
+                    character = "f";
+                    break;
+                case 16:
+                    character = "g";
+                    break;
+                case 17:
+                    character = "h";
+                    break;
+                case 18:
+                    character = "i";
+                    break;
+                case 19:
+                    character = "j";
+                    break;
+                case 20:
+                    character = "k";
+                    break;
+                case 21:
+                    character = "l";
+                    break;
+                case 22:
+                    character = "m";
+                    break;
+                case 23:
+                    character = "n";
+                    break;
+                case 24:
+                    character = "o";
+                    break;
+                case 25:
+                    character = "p";
+                    break;
+                case 26:
+                    character = "q";
+                    break;
+                case 27:
+                    character = "r";
+                    break;
+                case 28:
+                    character = "s";
+                    break;
+                case 29:
+                    character = "t";
+                    break;
+                case 30:
+                    character = "u";
+                    break;
+                case 31:
+                    character = "v";
+                    break;
+                case 32:
+                    character = "w";
+                    break;
+                case 33:
+                    character = "x";
+                    break;
+                case 34:
+                    character = "y";
+                    break;
+                case 35:
+                    character = "z";
+                    break;
+                default:
+                    character = "";
+            }
+            return character;
+        }
+    }
+
+
+    public static String codeGenerator(int codeSize, int symbols, Random random) {
+        StringBuilder secretCode;
+        String character;
+        secretCode = new StringBuilder(characterGenerator(symbols, random));
+
+        while (secretCode.length() < codeSize) {
+            character = characterGenerator(symbols, random);
+            while (secretCode.toString().contains(character) && codeSize < symbols) {
+                character = characterGenerator(symbols, random);
+            }
+            secretCode.append(character);
+        }
+        System.out.printf("The secret is prepared: %s %s.\n", stars(codeSize), choices(symbols));
+        return secretCode.toString();
+    }
+
+    public static String choices(int n) {
+        if (n <= 9) {
+            return "(0-" + n + ")";
+        } else {
+            return "(0-9, a-" + symbolGenerator(n - 1) + ")";
+        }
+    }
+
+    public static String stars(int n) {
+        return "*".repeat(Math.max(0, n));
+    }
+
+    public static int grade(String secretCode, String guess) {
+        int bulls = 0;
+        int cows = 0;
+        for (int i = 0; i < secretCode.length(); i++) {
+            if (guess.charAt(i) == secretCode.charAt(i)) {
+                bulls += 1;
+            } else if (secretCode.contains(String.valueOf(guess.charAt(i)))) {
+                cows += 1;
+            }
+        }
+        String grade;
+        if (cows == 0 && bulls == 0) {
+            grade = "None";
+        } else if (cows == 0) {
+            if (bulls == 1) {
+                grade = bulls + " bull";
+            } else {
+                grade = bulls + " bulls";
+            }
+        } else if (bulls == 0) {
+            if (cows == 1) {
+                grade = cows + " cow";
+            } else {
+                grade = cows + " cows";
+            }
+        } else {
+            grade = bulls + " bull(s) and " + cows + "cow(s)";
+        }
+
+        System.out.println("Grade: " + grade);
+        return bulls;
+
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Please, enter the secret code's length:");
+        Scanner sc = new Scanner(System.in);
+        int codeSize = sc.nextInt();
+        System.out.println("Input the number of possible symbols in the code:");
+        int symbols = sc.nextInt();
+
+        while (symbols > 36) {
+            System.out.println("Error: can't generate a secret code with " + symbols + " symbols because there aren't enough unique characters.");
+            symbols = sc.nextInt();
+        }
+        Random random = new Random(10000000);
+        String secretCode = codeGenerator(codeSize, symbols, random);
+        String guess;
+
+        int turn = 1;
+        System.out.println("Okay, let's start a game!");
+        int bulls = 0;
+        while (bulls < codeSize) {
+            System.out.printf("Turn %d:\n", turn);
+            guess = sc.next();
+            bulls = grade(secretCode, guess);
+            turn += 1;
+        }
+        System.out.println("Congratulations! You guessed the secret code.");
+    }
+}
