@@ -110,7 +110,7 @@ public class Main {
 
         while (secretCode.length() < codeSize) {
             character = characterGenerator(symbols, random);
-            while (secretCode.toString().contains(character) && codeSize < symbols) {
+            while (secretCode.toString().contains(character)) {
                 character = characterGenerator(symbols, random);
             }
             secretCode.append(character);
@@ -166,16 +166,48 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        System.out.println("Please, enter the secret code's length:");
+        System.out.println("Input the length of the secret code:");
         Scanner sc = new Scanner(System.in);
-        int codeSize = sc.nextInt();
-        System.out.println("Input the number of possible symbols in the code:");
-        int symbols = sc.nextInt();
 
-        while (symbols > 36) {
-            System.out.println("Error: can't generate a secret code with " + symbols + " symbols because there aren't enough unique characters.");
-            symbols = sc.nextInt();
+        int codeSize = 0;
+        String codeSizeString = sc.nextLine();
+        if (codeSizeString.equals("0")) {
+            System.out.printf("Error: \"%s\" isn't a valid number.\n", codeSizeString);
+            System.exit(0);
         }
+
+        try {
+            codeSize = Integer.parseInt(codeSizeString);
+        } catch (NumberFormatException e) {
+            System.out.printf("Error: \"%s\" isn't a valid number.\n", codeSizeString);
+            System.exit(0);
+        }
+        System.out.println("Input the number of possible symbols in the code:");
+
+        int symbols = 0;
+        String symbolsString = sc.nextLine();
+        if (symbolsString.equals("0")) {
+            System.out.printf("Error: \"%s\" isn't a valid number.\n", symbolsString);
+            System.exit(0);
+        }
+
+        try {
+            symbols = Integer.parseInt(symbolsString);
+        } catch (NumberFormatException e) {
+            System.out.printf("Error: \"%s\" isn't a valid number.\n", symbolsString);
+            System.exit(0);
+        }
+
+        if (symbols < codeSize) {
+            System.out.printf("Error: it's not possible to generate a code with a length of %d with %d unique symbols.\n", codeSize, symbols);
+            System.exit(0);
+        }
+        if (symbols > 36) {
+            System.out.println("Error: maximum number of possible symbols in the code is 36 (0-9, a-z).");
+            System.exit(0);
+        }
+
+
         Random random = new Random(10000000);
         String secretCode = codeGenerator(codeSize, symbols, random);
         String guess;
