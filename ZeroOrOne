@@ -1,0 +1,49 @@
+import java.util.*;
+
+public class Main {
+
+    public static int charToString(String c) {
+        if (c.equals("_")) {
+            return 0;
+        } else if (c.equals("X")) {
+            return 1;
+        }
+        return 0;
+    }
+
+    public static void evaluate(int i) {
+        if (i < 0) {
+            System.out.println("This number is 1");
+        }
+        if (i > 0) {
+            System.out.println("This number is 0");
+        }
+    }
+
+    public static void main(String[] args) {
+        // write your code here
+        int out = -5;
+        String print = "Input grid:\n";
+        String row;
+        String[] chars;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Input grid:");
+        row = sc.nextLine();
+        print += row + "\n";
+        chars = row.split("");
+        out += 2 * charToString(chars[0]) + charToString(chars[1]) + 2 * charToString(chars[2]);
+        row = sc.nextLine();
+        print += row + "\n";
+        chars = row.split("");
+        out += 4 * charToString(chars[0]) - 4 * charToString(chars[1]) + 4 * charToString(chars[2]);
+        row = sc.nextLine();
+        print += row + "\n";
+        chars = row.split("");
+        out += 2 * charToString(chars[0]) - charToString(chars[1]) + 2 * charToString(chars[2]);
+        sc.close();
+        System.out.println(print);
+        evaluate(out);
+
+
+    }
+}
