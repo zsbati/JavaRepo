@@ -1,0 +1,383 @@
+import java.util.*;
+
+public class Main {
+
+    public static int charToString(String c) {
+        if (c.equals("_")) {
+            return 0;
+        } else if (c.equals("X")) {
+            return 1;
+        }
+        return 0;
+    }
+
+    public static int evaluate(int[] arr) {
+        int max = arr[0];
+        for (int j : arr) {
+            if (max < j) {
+                max = j;
+            }
+        }
+        int index = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == max) {
+                index = i;
+            }
+        }
+        return index;
+    }
+
+
+    public static int weights(int i, int j) {
+        switch (i) {
+            case 0:
+                switch (j) {
+                    case 0:
+                        return 1;
+                    case 1:
+                        return 1;
+                    case 2:
+                        return 1;
+                    case 3:
+                        return 1;
+                    case 5:
+                        return 1;
+                    case 6:
+                        return 1;
+                    case 8:
+                        return 1;
+                    case 9:
+                        return 1;
+                    case 11:
+                        return 1;
+                    case 12:
+                        return 1;
+                    case 13:
+                        return 1;
+                    case 14:
+                        return 1;
+                    default:
+                        return -1;
+                }
+            case 1:
+                switch (j) {
+                    case 1:
+                        return 1;
+                    case 4:
+                        return 1;
+                    case 7:
+                        return 1;
+                    case 10:
+                        return 1;
+                    case 13:
+                        return 1;
+                    default:
+                        return -1;
+                }
+            case 2:
+                switch (j) {
+                    case 0:
+                        return 1;
+                    case 1:
+                        return 1;
+                    case 2:
+                        return 1;
+                    case 5:
+                        return 1;
+                    case 6:
+                        return 1;
+                    case 7:
+                        return 1;
+                    case 8:
+                        return 1;
+                    case 9:
+                        return 1;
+                    case 12:
+                        return 1;
+                    case 13:
+                        return 1;
+                    case 14:
+                        return 1;
+                    default:
+                        return -1;
+                }
+            case 3:
+                switch (j) {
+                    case 0:
+                        return 1;
+                    case 1:
+                        return 1;
+                    case 2:
+                        return 1;
+                    case 5:
+                        return 1;
+                    case 6:
+                        return 1;
+                    case 7:
+                        return 1;
+                    case 8:
+                        return 1;
+                    case 11:
+                        return 1;
+                    case 12:
+                        return 1;
+                    case 13:
+                        return 1;
+                    case 14:
+                        return 1;
+                    default:
+                        return -1;
+                }
+            case 4:
+                switch (j) {
+                    case 0:
+                        return 1;
+                    case 2:
+                        return 1;
+                    case 3:
+                        return 1;
+                    case 5:
+                        return 1;
+                    case 6:
+                        return 1;
+                    case 7:
+                        return 1;
+                    case 8:
+                        return 1;
+                    case 11:
+                        return 1;
+                    case 14:
+                        return 1;
+                    default:
+                        return -1;
+                }
+            case 5:
+                switch (j) {
+                    case 0:
+                        return 1;
+                    case 1:
+                        return 1;
+                    case 2:
+                        return 1;
+                    case 3:
+                        return 1;
+                    case 6:
+                        return 1;
+                    case 7:
+                        return 1;
+                    case 8:
+                        return 1;
+                    case 11:
+                        return 1;
+                    case 12:
+                        return 1;
+                    case 13:
+                        return 1;
+                    case 14:
+                        return 1;
+                    default:
+                        return -1;
+                }
+            case 6:
+                switch (j) {
+                    case 0:
+                        return 1;
+                    case 1:
+                        return 1;
+                    case 2:
+                        return 1;
+                    case 3:
+                        return 1;
+                    case 6:
+                        return 1;
+                    case 7:
+                        return 1;
+                    case 8:
+                        return 1;
+                    case 9:
+                        return 1;
+                    case 11:
+                        return 1;
+                    case 12:
+                        return 1;
+                    case 13:
+                        return 1;
+                    case 14:
+                        return 1;
+                    default:
+                        return -1;
+                }
+            case 7:
+                switch (j) {
+                    case 0:
+                        return 1;
+                    case 1:
+                        return 1;
+                    case 2:
+                        return 1;
+                    case 5:
+                        return 1;
+                    case 8:
+                        return 1;
+                    case 11:
+                        return 1;
+                    case 14:
+                        return 1;
+                    default:
+                        return -1;
+                }
+            case 8:
+                switch (j) {
+                    case 0:
+                        return 1;
+                    case 1:
+                        return 1;
+                    case 2:
+                        return 1;
+                    case 3:
+                        return 1;
+                    case 5:
+                        return 1;
+                    case 6:
+                        return 1;
+                    case 7:
+                        return 1;
+                    case 8:
+                        return 1;
+                    case 9:
+                        return 1;
+                    case 11:
+                        return 1;
+                    case 12:
+                        return 1;
+                    case 13:
+                        return 1;
+                    case 14:
+                        return 1;
+                    default:
+                        return -1;
+                }
+            case 9:
+                switch (j) {
+                    case 0:
+                        return 1;
+                    case 1:
+                        return 1;
+                    case 2:
+                        return 1;
+                    case 3:
+                        return 1;
+                    case 5:
+                        return 1;
+                    case 6:
+                        return 1;
+                    case 7:
+                        return 1;
+                    case 8:
+                        return 1;
+                    case 11:
+                        return 1;
+                    case 12:
+                        return 1;
+                    case 13:
+                        return 1;
+                    case 14:
+                        return 1;
+                    default:
+                        return -1;
+                }
+            default:
+                return 0;
+        }
+    }
+
+
+    public static int biases(int i) {
+        switch (i) {
+            case 1:
+                return 6;
+            case 2:
+                return 1;
+            case 4:
+                return 2;
+            case 7:
+                return 3;
+            case 3:
+                return 0;
+            case 5:
+                return 0;
+            case 8:
+                return -2;
+            case 0:
+                return -1;
+            case 9:
+                return -1;
+            case 6:
+                return -1;
+            default:
+                return -1000;
+        }
+    }
+
+
+    public static void main(String[] args) {
+        // write your code here
+        int[] out = new int[10];
+        String print = "Input grid:\n";
+        String row;
+        String[] line;
+        String[] chars = new String[15];
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Input grid:");
+        row = sc.nextLine();
+        print += row + "\n";
+        line = row.split("");
+        chars[0] = line[0];
+        chars[1] = line[1];
+        chars[2] = line[2];
+
+        row = sc.nextLine();
+        print += row + "\n";
+        line = row.split("");
+        chars[3] = line[0];
+        chars[4] = line[1];
+        chars[5] = line[2];
+
+        row = sc.nextLine();
+        print += row + "\n";
+        line = row.split("");
+        chars[6] = line[0];
+        chars[7] = line[1];
+        chars[8] = line[2];
+
+        row = sc.nextLine();
+        print += row + "\n";
+        line = row.split("");
+        chars[9] = line[0];
+        chars[10] = line[1];
+        chars[11] = line[2];
+
+        row = sc.nextLine();
+        print += row + "\n";
+        line = row.split("");
+        chars[12] = line[0];
+        chars[13] = line[1];
+        chars[14] = line[2];
+
+        sc.close();
+
+
+        for (int i = 0; i < 10; i++) {
+            out[i] = biases(i);
+            for (int j = 0; j < 15; j++) {
+                out[i] += charToString(chars[j]) * weights(i, j);
+            }
+        }
+
+        System.out.println(print);
+        System.out.printf("This number is %d", evaluate(out));
+
+
+    }
+}
